@@ -8,13 +8,13 @@ export const store = new Vuex.Store({
     state: {
         users: [],
         columns: [
-            { icon: '', name: 'Picture', selected: false, field: 'picture' },
-            { icon: '', name: 'Name', selected: false, field: 'name.first' },
-            { icon: '', name: 'Gender', selected: false, field: 'gender' },
-            { icon: '', name: 'Location', selected: false, field: 'location' },
-            { icon: '', name: 'Email', selected: false, field: 'email' },
-            { icon: '', name: 'Login', selected: false, field: 'login' },
-            { icon: '', name: 'Phone', selected: false, field: 'phone' },
+            { icon: 'coffee', name: 'Picture', selected: true, field: 'picture' },
+            { icon: 'coffee', name: 'Name', selected: true, field: 'name.first' },
+            { icon: 'coffee', name: 'Gender', selected: true, field: 'gender' },
+            { icon: 'coffee', name: 'Location', selected: true, field: 'location' },
+            { icon: 'coffee', name: 'Email', selected: true, field: 'email' },
+            { icon: 'coffee', name: 'Login', selected: true, field: 'login' },
+            { icon: 'coffee', name: 'Phone', selected: true, field: 'phone' },
         ]
     },
     getters : {
@@ -23,9 +23,6 @@ export const store = new Vuex.Store({
         },
         columns: state => {
             return state.columns
-        },
-        suma: state => { 
-            return 1000;
         }
     },
     mutations: {

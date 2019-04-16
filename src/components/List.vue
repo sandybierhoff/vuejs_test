@@ -6,6 +6,7 @@
                     <th v-for="column in columns" :key="column.name">
                         {{ column.name }}
                     </th>
+                    <th></th>  
                 </tr>
             </thead>
             <tbody>
@@ -15,7 +16,7 @@
                             {{ getPropertyObj(user, columnName) }}
                         </slot>
                     </td>
-                    <td>
+                    <td align="right">
                         <a v-bind:href="'#/detail/'+ index">User Detail</a>
                     </td>
                 </tr>
@@ -49,7 +50,12 @@
 
 <style>
     th {
-        padding: 10px 5px;
+        padding: 8px 5px;
         border-bottom: 2px solid #ccc;
+        text-align: left;
+    }
+
+    td {
+        padding: 3px 0;
     }
 </style>

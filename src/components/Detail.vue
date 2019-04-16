@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <div class="profile">
+    <div id="detail">
+        <div id="profile">
             <!-- {{ this.$store.getters.users }} -->
             <img v-bind:src="user.picture.thumbnail" /> 
             <address>
@@ -11,10 +11,8 @@
         </div>
         <div id="datas">
             <p v-for="column in selectedColumns" :key="column">
-                <b>{{ column }}:</b> 
+                <b>{{ column }}:</b> <br />
                 {{ getPropertyObj(user, column) }}
-
-                <br />
             </p>
         </div>
     </div>
@@ -44,16 +42,20 @@ export default {
 </script>
 
 <style>
-    .profile { 
+    #detail {
+        padding: 20px;    
+    }
+
+    #detail #profile { 
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-    .profile > img { 
+    #detail #profile > img { 
         flex: 0 1 auto;
         height: 100%;
     }
-    address {
+    #detail #profile address {
         margin-left: 10px;
     }
 </style>

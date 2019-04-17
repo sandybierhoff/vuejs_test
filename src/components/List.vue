@@ -1,16 +1,24 @@
  <template>
     <div>
-        <table class="table" cellspacing="0">
+        <table class="table" cellspacing="0" v-if="users.length>0">
             <thead>
                 <tr>
+                    <th>Avatar</th>
                     <th v-for="column in columns" :key="column.name">
                         {{ column.name }}
                     </th>
-                    <th></th>  
+                    <th width="80" align="rigth">
+                        Actions
+                    </th>  
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(user, index) in users" :key="user.id.value">
+                <tr v-for="(user, index) in users" :key="user.id.value">         
+                    <td>
+                        <slot name="avatar" v-bind:user="user">
+                            <img v-bind:src="user.picture.thumbnail" />
+                        </slot>
+                    </td>           
                     <td v-for="columnName in columnNames" :key="columnName">
                         <slot :name="columnName" v-bind:user="user">
                             {{ getPropertyObj(user, columnName) }}
@@ -22,6 +30,9 @@
                 </tr>
             </tbody>
         </table>
+        <p v-else>
+            No hay registros disponibles.
+        </p>
     </div>
 </template>
 

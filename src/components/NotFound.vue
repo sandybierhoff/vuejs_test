@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>You are lost !</h1>
+        <h1 style="text-align: center;">You are lost !</h1>
     </div>
 </template>
 

@@ -23,16 +23,20 @@ export default {
 </script>
 
 <style>
+#filter_div {
+  padding: 10px 20px;
+}
+
 ul{ 
   padding: 0px;
 }
 
-#filter_div {
-  padding: 10px 20px;
-}
 ul svg { 
-  color: #d4d4d4;
+  color: #a4abb0;
+  width: 15px;
+  margin: 0 5px;
 }
+
 font-awesome-icon {
   color: #53575d;
 }

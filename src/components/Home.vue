@@ -4,18 +4,8 @@
         <FilterBar />
       </div>
       <div id="content" class="column">
-
         <h2>{{ users.length }} total users</h2>
-
-        <List>
-          <!-- <template slot-scope="user" slot="name.first" >
-            {{ user.user.name.first }}
-          </template> -->
-
-          <template slot-scope="user" slot="picture">
-            <img v-bind:src="user.user.picture.thumbnail" />
-          </template>
-        </List>
+        <List />
       </div>
     </div>
 </template>

@@ -1,12 +1,11 @@
 <template>
     <div id="detail">
-        <div id="profile">
-            <!-- {{ this.$store.getters.users }} -->
-            <img v-bind:src="user.picture.thumbnail" /> 
+        <div id="profile">      
+            <img v-bind:src="user.picture.large" /> 
             <address>
                 {{ user.name.first }} {{ user.name.last }}<br>
             </address>
-
+        
             <br>
         </div>
         <div id="datas">
@@ -24,9 +23,7 @@ export default {
     name: 'Detail',
     methods: {
         getPropertyObj(obj, way){
-            
-            return t(obj, way).safeString;
-            
+            return t(obj, way).safeString;            
         }
     },
     computed: {

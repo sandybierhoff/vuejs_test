@@ -7,13 +7,13 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
         users: [],
-        columns: [
-            { icon: 'coffee', name: 'Picture', selected: true, field: 'picture' },
-            { icon: 'coffee', name: 'Name', selected: true, field: 'name.first' },
-            { icon: 'coffee', name: 'Gender', selected: true, field: 'gender' },
-            { icon: 'coffee', name: 'Location', selected: true, field: 'location' },
+        columns: [            
+            { icon: 'coffee', name: 'Title', selected: true, field: 'name.title' },
+            { icon: 'coffee', name: 'First Name', selected: true, field: 'name.first' },
+            { icon: 'coffee', name: 'Last Name', selected: true, field: 'name.last' },            
+            { icon: 'coffee', name: 'Gender', selected: true, field: 'gender' },           
             { icon: 'coffee', name: 'Email', selected: true, field: 'email' },
-            { icon: 'coffee', name: 'Login', selected: true, field: 'login' },
+            { icon: 'coffee', name: 'Cell', selected: true, field: 'cell' },
             { icon: 'coffee', name: 'Phone', selected: true, field: 'phone' },
         ]
     },
@@ -34,8 +34,8 @@ export const store = new Vuex.Store({
         }
     },
     actions : {
-        getUsers: async (context) => { //payload
-            let { data } = await Axios.get('https://randomuser.me/api/?results=10')
+        getUsers: async (context) => { 
+            let { data } = await Axios.get('https://randomuser.me/api/?results=10')        
             context.commit('setUsers', data.results)
         }
     }  
